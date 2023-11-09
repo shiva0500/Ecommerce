@@ -1,38 +1,221 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 768px) {
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  nav h3 {
+    font-size: 1.2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .menu-toggle {
+    display: flex;
+    font-size: x-large;
+  }
+
+  .home {
+    background-size: cover;
+    height: 60vh;
+  }
+
+  .hero {
+    top: 30%;
+    padding-top: 5rem;
+  }
+
+  .hero h3 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    width: 20rem;
+    font-weight: 600;
+  }
+
+  .hero button {
+    padding: 8px 25px;
+    font-size: 1rem;
+  }
+
+  .product {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item img {
+    width: 100%;
+  }
+
+  .pname {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .puse {
+    font-size: 1rem;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .shop {
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+  }
+
+  .item button {
+    margin: auto;
+  }
+
+  .Testimonial {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .Testimonial img {
+    height: auto;
+    width: 100%;
+  }
+
+  .story_content {
+    margin-top: 3rem;
+    width: 100%;
+  }
+
+  .head {
+    font-size: 1.4rem;
+  }
+
+  .story_content h2 {
+    font-size: 2rem;
+  }
+
+  .body {
+    font-size: 1rem;
+  }
+
+  .homebtn {
+    font-size: 1.2rem;
+  }
+
+  .reviews {
+    margin: 2rem auto;
+  }
+
+  .reviews h2 {
+    font-size: 1.8rem;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .card img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .card p {
+    padding: 0rem;
+  }
+
+  .card .icon {
+    font-size: 1.5rem;
+  }
+
+  .giftcard {
+    height: 20rem;
+    padding-top: 3rem;
+  }
+
+  .giftcard h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .ghead {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .gbody {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .gbtn {
+    font-size: 1rem;
+  }
+
+  .services {
+    padding: 3rem 0rem;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .service_card {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .s-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i {
+    margin-left: 0;
   }
 }

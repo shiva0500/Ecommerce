@@ -1,0 +1,148 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    border: 2px solid #7f957f;
+  }
+
+  .item_main{
+height: 20vh;
+width: 55vw;
+  }
+.item_body{
+  padding: 2rem 0;
+  width: 65vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+}
+  .cart_body{
+    /* height: 150vh; */
+    background-color: #e8ece8;
+  }
+  
+
+
+   .description {
+    width: 100%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  
+  .countHandler input {
+    width: 20px;
+    text-align: center;
+    font-weight: bolder;
+  }
+  
+  .checkout{
+    border: 2px solid #7f957f;
+    width:40vw;
+    height: 35vh;
+  }
+
+  .checkout button {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(19, 19, 19);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+
+  .pd-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .pd-head h2 {
+    /* position: relative; */
+    text-transform: uppercase;
+    font-size: 6em;
+    color: rgb(97, 94, 97);
+    margin: 25px;
+    text-align: center;
+  }
+  
+  .p-display {
+    height: 75vh;
+    flex: 60%;
+  }
+  
+  .p-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    height: 80px;
+  }
+  
+  .p-items img {
+    width: 100px;
+    border-radius: 4px;
+    border: 2px solid rgb(160, 157, 157);
+  }
+  
+  .p-items h3 {
+    font-weight: 600;
+  }
+  
+  .p-items p {
+    font-weight: 700;
+  }
+  
+
+  @media (max-width: 767px) {
+
+    .cart {
+      padding: 2rem;
+      padding-top: 5rem;
+    }
+  
+    .item_main {
+      width: 100%;
+    }
+  
+    .item_body {
+      width: 100%;
+    }
+  
+    .checkout {
+      width: 100%;
+    }
+  
+    .checkout button {
+      width: 100%;
+    }
+  
+    .p-display {
+      flex: 100%;
+    }
+
+    .p-items img {
+      width: 70px;
+    }
+ 
+    .p-items h3 {
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+    
+    .p-items p {
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+  }

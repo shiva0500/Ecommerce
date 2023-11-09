@@ -1,0 +1,177 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+
+}
+
+.login_img {
+  height: 100%;
+  width: 50%;
+  flex: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-color: white;
+  transition: ease-in 3s all;
+}
+
+.login_page {
+  height: 100%;
+  width: 50%;
+  flex: 50%;
+  background-color: white;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  margin: auto;
+ /* padding-left: 5rem;
+ padding-right: 5rem; */
+}
+
+input[type="email"], input[type="password"]{
+width: 100%;
+height: 2rem;
+border: none;
+border-bottom: 2px solid rgb(3, 194, 105);
+font-size: 1rem;
+overflow: hidden;
+margin-bottom: 0.rem;
+
+}
+
+label{
+font-size: 1rem;
+text-align: left;
+font-weight: 500;
+
+}
+
+input[type="submit"]{
+  border: none;
+  width: 100%;
+  padding: 0.875rem 0;
+  background-color: rgb(69, 220, 170);
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 10px;
+  color: white;
+}
+
+input[type="submit"]:hover{
+  background-color: rgb(128, 233, 198);
+}
+
+.login_page p{
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.login_page h1{
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+font-weight: 500;
+}
+
+.login_page h2{
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+font-weight: 300;
+}
+
+.loginLink{
+  /* text-align: center; */
+  color: rgb(69, 220, 170);
+  /* font-size: 1.2rem; */
+}
+
+@media (max-width: 768px) {
+  .login {
+flex-direction: column;
+width: 100%;
+/* height: 100%; */
+  }
+  
+  .login_img {
+    flex: 30%;
+    height: 90%;
+    width: 100%;
+    
+  }
+  
+  .login_page {
+    flex: 70%;
+    height: 100%;
+    width: 80%;
+    /* border: 2px solid #000; */
+    border-radius: 12px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  
+   /* padding-left: 5rem;
+   padding-right: 5rem; */
+  }
+  
+
+  
+  label{
+  font-size: 1.1rem;
+
+  font-weight: 500;
+  
+  }
+  
+  input[type="submit"]{
+
+    padding: 0.775rem 0;
+
+    font-size: 1rem;
+ 
+  }
+  
+
+  
+  .login_page p{
+
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  
+  .login_page h1{
+
+    margin-bottom: 1rem;
+    font-size: 2.4rem;
+  font-weight: 500;
+  }
+  
+  .login_page h2{
+
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  font-weight: 300;
+  }
+
+}
