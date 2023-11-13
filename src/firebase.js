@@ -2,12 +2,12 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD8XC3T5dljmxVYLJAhWz7DNC3Z_xO4POg",
-  authDomain: "plantecom.firebaseapp.com",
-  projectId: "plantecom",
-  storageBucket: "plantecom.appspot.com",
-  messagingSenderId: "603477308138",
-  appId: "1:603477308138:web:0a16cc89360718d48f9d93"
+  apiKey: "AIzaSyBz0iOfQcu8ZStUQUbk1QTOTAwohI0FWkI",
+  authDomain: "plantecom-6a77d.firebaseapp.com",
+  projectId: "plantecom-6a77d",
+  storageBucket: "plantecom-6a77d.appspot.com",
+  messagingSenderId: "962060785285",
+  appId: "1:962060785285:web:164d427eaf3654517dfbec"
 };
 
 const app = initializeApp(firebaseConfig);

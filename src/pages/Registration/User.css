@@ -1,0 +1,14 @@
+.user_page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 6rem;
+}
+
+.user_img{
+    width: 200px;
+    height: 200px;
+    border-radius:50% ;
+}

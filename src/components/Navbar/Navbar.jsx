@@ -1,22 +1,32 @@
-import React, { useState ,useContext} from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes ,faBagShopping, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes, faBagShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 import "../../App.css";
 import "./Navbar.css";
 import { ShopContext } from "../../context/shop-context";
+import { auth } from "../../firebase"; // Import the Firebase auth object
 
-function Navbar(props) {
+const Navbar = () => {
   const { totalItems } = useContext(ShopContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleUserLink = () => {
+    const userLoggedIn = auth.currentUser; // Check if there is a logged-in user
 
+    if (userLoggedIn) {
+      // Redirect to the user page
+      navigate("/user");
+    } else {
+      // Redirect to the login page
+      navigate("/login");
+    }
+  };
 
   return (
     <div className="navbar">
@@ -25,7 +35,6 @@ function Navbar(props) {
           <h3>PLANTOSHO</h3>
         </div>
         <div className="mobile_link">
-
           <div className="menu-toggle" onClick={toggleMenu}>
             {isMenuOpen ? (
               <FontAwesomeIcon icon={faTimes} size="2x" />
@@ -34,7 +43,6 @@ function Navbar(props) {
             )}
           </div>
         </div>
-
         <div className={`nav_links${isMenuOpen ? " open" : ""}`}>
           <Link className="link" to="/">
             Home
@@ -49,16 +57,16 @@ function Navbar(props) {
             Contact
           </Link>
           <Link className="link" to="/cart">
-          <FontAwesomeIcon icon={faBagShopping} style={{fontSize:"1.5rem"}} />
-          <div className="count">{totalItems}</div>
+            <FontAwesomeIcon icon={faBagShopping} style={{ fontSize: "1.5rem" }} />
+            <div className="count">{totalItems}</div>
           </Link>
-          <Link className="link" to="/login">
-          <FontAwesomeIcon icon={faUser} style={{fontSize:"1.5rem"}} />
-          </Link>
+          <div className="link" onClick={handleUserLink}>
+            <FontAwesomeIcon icon={faUser} style={{ fontSize: "1.5rem" }} />
+          </div>
         </div>
       </nav>
     </div>
   );
-}
+};
 
 export default Navbar;

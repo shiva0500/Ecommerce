@@ -16,7 +16,7 @@
   background-repeat: no-repeat;
 
   background-color: white;
-  transition: ease-in 3s all;
+  transition: ease-in 2s backgroundImage;
 }
 
 .login_page {
