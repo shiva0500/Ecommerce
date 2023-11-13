@@ -11,21 +11,33 @@ const getDefaultCart = () => {
   return cart;
 };
 
-export const ShopContextProvider = (props) => {
-  const [cartItems, setCartItems] = useState(() => {
-    // Load cart items from localStorage when the component mounts
-    const storedCartItems = localStorage.getItem("cartItems");
-    return storedCartItems ? JSON.parse(storedCartItems) : getDefaultCart();
-  });
 
-  const updateCart = (newCart) => {
-    setCartItems(newCart);
-  };
+  export const ShopContextProvider = (props) => {
+    const [cartItems, setCartItems] = useState(() => {
+      // Load cart items from localStorage when the component mounts
+      const storedCartItems = localStorage.getItem("cartItems");
+      return storedCartItems ? JSON.parse(storedCartItems) : getDefaultCart();
+    });  
 
-  useEffect(() => {
-    // Save cart items to localStorage whenever the cartItems state changes
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
+
+    const [totalItems, setTotalItems] = useState(0);
+
+    const updateCart = (newCart) => {
+      setCartItems(newCart);
+    };
+
+
+
+    useEffect(() => {
+      // Save cart items to localStorage whenever the cartItems state changes
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      // Calculate totalItems based on the sum of cart item quantities
+      const newTotalItems = Object.values(cartItems).reduce((total, quantity) => total + quantity, 0);
+      setTotalItems(newTotalItems);
+    }, [cartItems]);
+
+
+
 
 const getTotalCartAmount = () => {
   let totalAmount = 0;
@@ -71,6 +83,7 @@ const getTotalCartAmount = () => {
     removeFromCart,
     getTotalCartAmount,
     checkout,
+    totalItems,
   };
 
   return (

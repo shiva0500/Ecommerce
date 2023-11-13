@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import "./Contact.css";
 import {
@@ -16,6 +15,7 @@ import {
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
+import Commonnav from "../../components/Navbar/Commonnav";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -37,7 +37,7 @@ function Contact() {
 
   return (
     <>
-      <Navbar />
+      <Commonnav />
       <div className="contact">
         <div className="contact-page">
           <h1>Get In Touch</h1>
@@ -133,10 +133,12 @@ function Contact() {
         </form>
       </div>
       <iframe
+        title="Google Maps"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.0450819579573!2d78.47208957503413!3d17.361563583521168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb978a6e1a939b%3A0xcb5a69e4aaf113fb!2sCharminar!5e0!3m2!1sen!2sin!4v1699376167870!5m2!1sen!2sin"
-        allowfullscreen=""
+        allowFullScreen={true}
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        referrerPolicy="no-referrer-when-downgrade"></iframe>
+
       <Footer />
     </>
   );

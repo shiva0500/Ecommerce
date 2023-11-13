@@ -1,6 +1,7 @@
 .product {
   width: calc(33.33% - 10px);
   margin-bottom: 10px;
+
 }
 
 .item img {
@@ -42,9 +43,11 @@
 }
 
 .cart_icon {
-  display: flex;align-items: center;justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  transform: translate(18rem, -31.5rem);
+  transform: translate(20rem, -34.5rem);
   z-index: 2;
   opacity: 0;
   background-color: white;
@@ -56,13 +59,51 @@
 .cart_icon:hover {
   opacity: 1;
   cursor: pointer;
-  
+  background-color: white;
 }
 
-.addToCartBttn{
-   
-  font-size: 1.5rem;
+.cart_icon button:hover{
+  background-color: white !important;
 }
+
+.cart_icon button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.addToCartBttn {
+  font-size: 1.5rem;
+  opacity: 1;
+  background-color: #3498db; /* Add your desired background color */
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.plink {
+  opacity: 1;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
 
 @media (max-width: 768px) {
   .product {
@@ -97,15 +138,11 @@
 
   .cart_icon {
     transform: translate(6rem, -13.5rem);
-    opacity: 1;
    height: 35px;
    width: 35px;
   }
 
-  .cart_icon:hover{
-    background-color: black;
-    color: white;
-  }
+
 
   .addToCartBttn{
    

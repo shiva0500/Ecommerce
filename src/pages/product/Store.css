@@ -27,7 +27,8 @@
 }
 
 .shop {
-  padding: 3rem 4rem;
+  padding: 3rem;
+  margin:  0 8rem;
 }
 
 @media (max-width: 768px) {
@@ -48,5 +49,6 @@
 
   .shop {
     padding: 0 2rem;
+    margin:  0 0rem;
   }
 }

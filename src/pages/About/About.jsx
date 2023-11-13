@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import "../../App.css";
 import "./About.css";
@@ -13,11 +12,13 @@ import a3 from "../../assets/a3.jpg";
 import a4 from "../../assets/a4.jpg";
 import a5 from "../../assets/a5.jpg";
 import a6 from "../../assets/a6.jpg";
+import Commonnav from "../../components/Navbar/Commonnav";
 
 function About() {
   return (
     <>
-      <Navbar />
+      
+      <Commonnav/>
       <div className="about">
         <div className="about_header">
           <div className="a_head">

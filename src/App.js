@@ -10,6 +10,7 @@ import Cart from './pages/cart/cart';
 import { ShopContextProvider } from './context/shop-context';
 
 import Mainstore from './pages/Mainstore/Mainstore';
+import Addproduct from './Addproduct';
 ;
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path='/signup' element={<Signup />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/mainstore' element={<Mainstore />} />
+            <Route path='/addproducts' element={<Addproduct />} />
             <Route path='/*' element={<Nopage />} />
           </Routes>
         </Router>

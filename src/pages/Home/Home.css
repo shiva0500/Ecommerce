@@ -11,7 +11,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   filter: blur(2.5px);
   width: 100%;
-  transition: ease-in 3s all;
+  transition: backgroundImage ease-in 3s ;
 }
 
 .hero {
@@ -69,7 +69,7 @@
   }
 
   .hero {
-    top: 6%;
+    top: 10.5%;
     z-index: 0;
   }
 

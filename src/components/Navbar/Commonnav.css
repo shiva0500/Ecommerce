@@ -1,52 +1,40 @@
-
-.nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.4rem;
-    position: absolute;
-    z-index: 1;
-    width: 100vw;
-    color: white !important;
-  }
-  
-  .nav_logo h3 {
-    font-size: 1.5rem;
-  }
-
-  .nav_links .link {
-    padding: 1rem;
-    margin: auto;
-    /* color: rgb(255, 255, 255) !important; */
-    font-size: 1.1rem;
-    font-weight: 400;
-  }
-
-
-.count{
-  background-color: rgb(0, 0, 0);
-  width: 20px;
-  height: 20px;
-  border-radius:50% ;
-  position: absolute;
-  bottom: 3.5rem;
-  right: 5.5rem;
+.Cnav {
   display: flex;
-  align-items: center;justify-content: center;
-  font-size: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 1.4rem 0.5rem ;
+  width: 100vw;
+  color: black;
+  
+}
+
+.Cnavbar{
+  margin: 0;
+  /* border-bottom: 2px solid rgb(145, 238, 201); */
 }
 
 
+.Cnav_logo h3 {
+  font-size: 1.5rem;
+  color: black;
+}
 
+.Cnav_links .Clink {
+  padding: 1rem;
+  margin: auto;
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
 
-.menu-toggle {
+.Cmenu-toggle {
   display: none; /* Hidden by default for larger screens */
   cursor: pointer;
 }
 
 /* Navigation links container styles */
-.nav_links {
-  color: white;
+.Cnav_links {
+  color: black;
   display: flex;
   gap: 20px;
   list-style: none;
@@ -55,19 +43,18 @@
 }
 
 /* Navigation links styles */
-.link {
-  color: #ffffff;
+.Clink {
+  color: black;
   text-decoration: none;
   font-size: 1rem;
 }
 
 /* Apply styles when the menu is open */
-.nav_links.open {
+.Cnav_links.open {
   display: flex;
   flex-direction: column;
   position: absolute;
   background-color: white;
-  color: #000;
   top: 65px; /* Adjust this value to position the menu under the navbar */
   left: 0;
   right: 0;
@@ -76,7 +63,7 @@
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.mobile_link{
+.Cmobile_link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,27 +72,22 @@
 
 /* Media query for smaller screens to show/hide the menu toggle button */
 @media (max-width: 768px) {
-  .menu-toggle {
+  .Cmenu-toggle {
     display: block;
   }
 
-  .nav_links {
+  .Cnav_links {
     display: none;
     border-bottom: 2px solid black;
-    /* color: white; */
+    color: black;
   }
 
-  .link{
-    color: #000;
-  }
-
-  .nav_links .link {
-    /* color: white; */
+  .Cnav_links .Clink {
+    color: black;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0rem;
     font-size: 1rem;
     font-weight: 400;
   }
-
 }
