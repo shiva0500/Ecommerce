@@ -6,6 +6,7 @@ import "./Signup.css";
 import { Link,useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword , updateProfile } from "firebase/auth";
 import { auth } from "../../firebase";
+import Swal from 'sweetalert2';
 
 
 const backgroundImages = [image1, image2, image3];
@@ -24,6 +25,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!values.name || !values.email || !values.pass) {
+      
       setErrorMsg("Please enter details");
       return;
     }
@@ -47,6 +49,26 @@ const Signup = () => {
       } )
   };
 
+  
+    const alert = () => {
+      if (handleSubmit) {
+        Swal.fire({
+          icon: "success",
+          title: "signin successfully",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "please ckeck details",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+
+      }
+
   const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
 
   useEffect(() => {
@@ -63,6 +85,8 @@ const Signup = () => {
   const loginStyle = {
     backgroundImage: `url(${backgroundImages[backgroundImageIndex]})`,
   };
+
+  
   return (
     <>
       <div className="login">
@@ -109,7 +133,7 @@ const Signup = () => {
             <input
               type="submit"
               value="SignUP"
-              onClick={handleSubmit}
+              onClick={() => { handleSubmit(); alert();}}
               disabled={submitbtndisable}
             />
             <br />
@@ -120,7 +144,7 @@ const Signup = () => {
                 Log in
               </Link>
             </div>
-            <b>{errorMsg}</b>
+            <b className="firebaseError"  >{errorMsg}</b>
           </form>
         </div>
       </div>

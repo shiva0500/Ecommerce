@@ -6,7 +6,7 @@
     padding: 1.4rem;
     position: absolute;
     z-index: 1;
-    width: 100vw;
+    width: 100%;
     color: white !important;
   }
   
@@ -74,6 +74,7 @@
   z-index: 1;
   padding: 20px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+ 
 }
 
 .mobile_link{
@@ -91,12 +92,13 @@
 
   .nav_links {
     display: none;
-    border-bottom: 2px solid black;
+    
     /* color: white; */
   }
 
   .link{
     color: #000;
+   
   }
 
   .nav_links .link {

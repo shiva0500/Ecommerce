@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { auth } from "../../firebase"; // Import the Firebase auth object
 import c1 from "../../assets/bg-2.jpg";
 import "./User.css"
+import Swal from 'sweetalert2';
+
 const User = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -18,21 +18,28 @@ const User = () => {
     return () => unsubscribe(); // Cleanup subscription on component unmount
   }, []);
 
-  const notify = () => toast.success('Signed Out successfully!', {
-    position: "top-center",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-  });
+const alert = () => {
+  if (handleSignOut) {
+    Swal.fire({
+      icon: "success",
+      title: "signout successfully",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "signout successfully",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
+
+}
 
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        notify();
         navigate('/');
       })
       .catch((error) => {
@@ -48,13 +55,12 @@ const User = () => {
             <img className='user_img' src={c1} alt="/" />
             <h2 className="user_name" >name: {user.displayName}!</h2>
             <h2 className="user_email"  >email : {user.email}</h2>
-            <button onClick={handleSignOut} >Sign Out</button>
+            <button  onClick={() => { handleSignOut(); alert();}} >Sign Out</button>
           </div>
         ) : (
           navigate("/login")
         )}
       </div>
-      <ToastContainer />
     </>
   );
 };

@@ -32,7 +32,7 @@ function Home() {
   return (
     <div>
       <Navbar />
-      <div className="home" style={homeStyle}></div>
+      <div className="home" ></div>
       <div className="hero">
         <h3>WELCOME TO THE GREENSTORE</h3>
         <h1>Let's Bring the Spring to Your Home</h1>

@@ -4,24 +4,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ShopContext } from "../../context/shop-context";
 import "../../App.css";
 import "./Product.css";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Swal from 'sweetalert2'
+// import withReactContent from 'sweetalert2-react-content'
 
 const Product = React.memo((props) => {
   // ... (Previous component logic)
   const { id, name, price, use, pimg } = props.data;
   const { addToCart } = useContext(ShopContext);
+  const MySwal = () => {
+    Swal.fire({
+      icon: "success",
+      title: "added to cart",
+      showConfirmButton: false,
+      timer: 1500
+    })
+  };
 
-  const notify = () => toast.success('Added Successfully!', {
-    position: "top-right",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-    });
+
 
     return (
       <div className="product">
@@ -31,7 +30,7 @@ const Product = React.memo((props) => {
               <img src={pimg} alt="/" />
             </div>
             <div className="cart_icon">
-              <button className="addToCartBttn" onClick={notify}>
+              <button className="addToCartBttn" onClick={MySwal}>
                 <FontAwesomeIcon
                   onClick={() => {
                     addToCart(id);
@@ -56,7 +55,7 @@ const Product = React.memo((props) => {
           <p className="price"> ${price} </p>
         </div>
         {/* Move ToastContainer outside of the product div */}
-        <ToastContainer />
+        
       </div>
     );
  

@@ -1,8 +1,8 @@
 .home {
-  /* background-image: url(../../assets/hero-3.jpg); */
+  background-image: url(../../assets/hero-3.jpg);
   background-position: center;
   background-size: cover;
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   height: 100vh;
   position: relative;
   margin: auto;
@@ -69,7 +69,7 @@
   }
 
   .hero {
-    top: 10.5%;
+    top: 12%;
     z-index: 0;
   }
 

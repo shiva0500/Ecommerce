@@ -6,6 +6,7 @@ import "./Login.css";
 import { Link,useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword   } from "firebase/auth";
 import { auth } from "../../firebase";
+import Swal from "sweetalert2";
 
 
 const backgroundImages = [image1, image2, image3];
@@ -15,7 +16,7 @@ const Login = () => {
   const [values, setValues] = useState({
     name: "",
     email: "",
-    pass: "",
+    password: "",
   });
 
   const [errorMsg, setErrorMsg] = useState("");
@@ -23,8 +24,9 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if ( !values.email || !values.pass) {
+    if ( !values.email || !values.password) {
       setErrorMsg("Please enter details");
+      
       return;
     }
     setErrorMsg("");
@@ -39,10 +41,24 @@ const Login = () => {
       
       .catch((err) =>{
         setsubmitbtndisable(false);
-        setErrorMsg(err.message);
+        const error = err.message + "Firebase: Error (auth/invalid-login-credentials).";
+        setErrorMsg(error);
         console.log("Error", err);
+       
       } )
   };
+
+  const alert = () => {
+      Swal.fire({
+        icon: "error",
+        title: "please ckeck details",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+
+    
+
 
 
   const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
@@ -75,14 +91,14 @@ const Login = () => {
             <input type="email" name="email" id="email" placeholder="Enter you email"   onChange={(e) =>setValues((prev) => ({...prev , email:e.target.value}))} />
             <br />
             <label htmlFor="">Password :</label>
-            <input type="password" name="password" id="password" placeholder=" Enter your password"   onChange={(e) =>setValues((prev) => ({...prev , pass:e.target.value}))} />
+            <input type="password" name="password" id="password" placeholder=" Enter your password"   onChange={(e) =>setValues((prev) => ({...prev , password:e.target.value}))} />
             <br />
             <input type="submit" value="Login" disabled={submitbtndisable} onClick={handleSubmit} />
             <br />
             <div className="create">
             <p>Don't have an account?</p> <Link className="loginLink" to="/Signup" >Sign up</Link>
               <br />
-              <p>{errorMsg}</p>
+              <p className="firebaseError"  >{errorMsg}</p>
             </div>
           </form>
         </div>

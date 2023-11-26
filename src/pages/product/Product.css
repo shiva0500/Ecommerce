@@ -4,6 +4,10 @@
 
 }
 
+.item{
+  width: 100%;
+}
+
 .item img {
   width: 100%;
 }
@@ -137,6 +141,7 @@
   }
 
   .cart_icon {
+    opacity: 1;
     transform: translate(6rem, -13.5rem);
    height: 35px;
    width: 35px;
