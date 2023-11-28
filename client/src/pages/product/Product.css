@@ -1,0 +1,154 @@
+.product {
+  width: calc(33.33% - 10px);
+  margin-bottom: 10px;
+
+}
+
+.item{
+  width: 100%;
+}
+
+.item img {
+  width: 100%;
+}
+
+.pname {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.puse {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgb(99, 100, 101);
+}
+
+.item button {
+  width: 13rem;
+  padding: 10px 45px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(1, 140, 1);
+}
+
+.img_item {
+
+  position: relative;
+  margin: auto;
+
+}
+
+.cart_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transform: translate(20rem, -34.5rem);
+  z-index: 2;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.cart_icon:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.cart_icon button:hover{
+  background-color: white !important;
+}
+
+.cart_icon button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.addToCartBttn {
+  font-size: 1.5rem;
+  opacity: 1;
+  background-color: #3498db; /* Add your desired background color */
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.plink {
+  opacity: 1;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+
+@media (max-width: 768px) {
+  .product {
+    width: calc(50% - 5px);
+  }
+
+  .item {
+    width: 100%;
+  }
+
+  .item img {
+    width: 100%;
+  }
+
+  .pname {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .puse {
+    font-size: 1rem;
+  }
+
+  .item button {
+    font-size: 0.8rem;
+    width: 9rem;
+    padding: 5px;
+  }
+
+  .cart_icon {
+    opacity: 1;
+    transform: translate(6rem, -13.5rem);
+   height: 35px;
+   width: 35px;
+  }
+
+
+
+  .addToCartBttn{
+   
+    font-size: 1.2rem;
+  }
+}
