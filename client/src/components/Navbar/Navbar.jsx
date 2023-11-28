@@ -1,19 +1,18 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes, faBagShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 import "../../App.css";
 import "./Navbar.css";
-import { ShopContext } from "../../context/shop-context";
 
 const Navbar = () => {
-  const { totalItems } = useContext(ShopContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
 
   // const handleUserLink = () => {
 
@@ -55,8 +54,7 @@ const Navbar = () => {
             Contact
           </Link>
           <Link className="link" to="/cart">
-            <FontAwesomeIcon icon={faBagShopping} style={{ fontSize: "1.5rem" }} />
-            <div className="count">{totalItems}</div>
+            <FontAwesomeIcon icon={faBagShopping} style={{ fontSize: "1.5rem" }} />           
           </Link>
           <div className="link" >
             <FontAwesomeIcon icon={faUser} style={{ fontSize: "1.5rem" }} />

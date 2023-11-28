@@ -10,7 +10,6 @@ import Cart from './pages/cart/cart';
 import { ShopContextProvider } from './context/shop-context';
 
 import Mainstore from './pages/Mainstore/Mainstore';
-import Addproduct from './Addproduct';
 import User from './pages/Registration/User';
 import DummyProduct from './DummyProduct';
 ;
@@ -28,7 +27,6 @@ function App() {
             <Route path='/signup' element={<Signup />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/mainstore' element={<Mainstore />} />
-            <Route path='/addproducts' element={<Addproduct />} />
             <Route path='/user' element={<User />} />
             <Route path='/dummy' element={<DummyProduct />} />
             <Route path='/*' element={<Nopage />} />

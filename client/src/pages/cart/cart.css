@@ -62,14 +62,14 @@ margin: auto;
 }
 
 .cart_headings {
-  padding-left: 12rem;
-  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-right: 10rem;
   display: flex;
   align-items: center;
   /* justify-content: space-between; */
   height: 7vh;
   width: 85%;
-  gap: 3rem;
+  gap: 1rem;
   justify-content: space-between;
 
   border: 1px solid rgb(201, 228, 201);
@@ -118,9 +118,9 @@ margin: auto;
 }
 
 input[type="number"] {
-  width: 40px;
-  height: 25px;
-  padding: 0.2rem;
+  width: 50px;
+  height: 30px;
+  padding: 0.7rem;
 }
 
 /* cart summary */
@@ -243,6 +243,7 @@ input[type="number"] {
   input[type="number"] {
     width: 30px;
     height: 20px;
+    padding: 0.3rem;
   }
 
   .cart-summary {
