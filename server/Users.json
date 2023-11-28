@@ -1,0 +1,38 @@
+[
+  {
+    "user_id": 1,
+    "username": "shiva",
+    "email": "shiva@gmail.com",
+    "password": "123"
+  },
+  {
+    "user_id": 2,
+    "username": "dinesh",
+    "email": "dinesh@gmail.com",
+    "password": "1234"
+  },
+  {
+    "user_id": 3,
+    "username": "sheshu",
+    "email": "sheshu@gmail.com",
+    "password": "12345"
+  },
+  {
+    "user_id": 4,
+    "username": "vineeth",
+    "email": "vineeth@gmail.com",
+    "password": "123456"
+  },
+  {
+    "id": "1701162015936",
+    "username": "srikar",
+    "email": "srikar@gmail.com",
+    "password": "987654321"
+  },
+  {
+    "id": "1701162619861",
+    "username": "sharan",
+    "email": "sharan@gmail.com",
+    "password": "918273645"
+  }
+]

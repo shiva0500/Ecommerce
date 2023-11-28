@@ -15,14 +15,14 @@ const Navbar = () => {
 
 
   // const handleUserLink = () => {
-
-  //   if () {
-  //     // Redirect to the user page
-  //     navigate("/user");
-  //   } else {
-  //     // Redirect to the login page
-  //     navigate("/login");
-  //   }
+  //   // Redirect based on authentication status
+  //   // if () {
+  //   //   // Redirect to the user page if logged in
+  //   //   window.location.href = "/user"; // Use window.location.href for external navigation
+  //   // } else {
+  //   //   // Redirect to the login page if not logged in
+  //   //   window.location.href = "/login"; // Use window.location.href for external navigation
+  //   // }
   // };
 
   return (
@@ -57,8 +57,10 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faBagShopping} style={{ fontSize: "1.5rem" }} />           
           </Link>
           <div className="link" >
-            <FontAwesomeIcon icon={faUser} style={{ fontSize: "1.5rem" }} />
-          </div>
+        
+        <Link to="/user" ><FontAwesomeIcon icon={faUser} style={{ fontSize: "1.5rem" }} /></Link>
+        
+      </div>
         </div>
       </nav>
     </div>
