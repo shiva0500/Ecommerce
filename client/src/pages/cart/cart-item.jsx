@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import "../product/Product.css";
 import "./cart.css";
 
@@ -23,7 +21,7 @@ export const CartItem = (props) => {
               -{" "}
             </button>
             <input
-              type="number"
+              type="text" className="counter"
               value={cartItems[id]}
               onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
             />
@@ -33,14 +31,11 @@ export const CartItem = (props) => {
             </button>
           </div>
           <p className="cart-price">${price * cartItems[id]}</p>
-          <FontAwesomeIcon
-            onClick={() => {
+
+          <i             onClick={() => {
               removeFromCart(id);
             }}
-            className=" dltItemBtn plink"
-            icon={faTimes}
-            size="2x"
-          />
+            className=" dltItemBtn plink"class="fa-solid fa-xmark fa-2xl" ></i>
         </div>
       </div>
     </>

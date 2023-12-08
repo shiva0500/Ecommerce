@@ -2,19 +2,9 @@ import React, { useState } from "react";
 
 import Footer from "../../components/Footer/Footer";
 import "./Contact.css";
-import {
-  AiFillInstagram,
-  AiFillLinkedin,
-  AiFillFacebook,
-} from "react-icons/ai";
-import { BsPinterest } from "react-icons/bs";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLocationPin,
-  faPhone,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
+
+
 import Commonnav from "../../components/Navbar/Commonnav";
 
 function Contact() {
@@ -47,10 +37,9 @@ function Contact() {
           </p>
           <div className="address">
             <div className="c_icon">
-              <FontAwesomeIcon
-                icon={faLocationPin}
-                style={{ color: "#45DCAA", fontSize: "1.5rem" }}
-              />
+            <i class="fas fa-map-pin" style={{ color: "#45DCAA", fontSize: "1.5rem" }}></i>
+
+              
             </div>
             <div className="info">
               <p>VISIT US</p>
@@ -59,10 +48,7 @@ function Contact() {
           </div>
           <div className="address">
             <div className="c_icon">
-              <FontAwesomeIcon
-                icon={faPhone}
-                style={{ color: "#45DCAA", fontSize: "1.5rem" }}
-              />
+            <i class="fas fa-phone" style={{ color: "#45DCAA", fontSize: "1.5rem" }}></i>
             </div>
             <div className="info">
               <p>CALL US</p>
@@ -71,10 +57,7 @@ function Contact() {
           </div>
           <div className="address">
             <div className="c_icon">
-              <FontAwesomeIcon
-                icon={faEnvelope}
-                style={{ color: "#45DCAA", fontSize: "1.5rem" }}
-              />
+            <i class="fas fa-envelope" style={{ color: "#45DCAA", fontSize: "1.5rem" }}></i>
             </div>
             <div className="info">
               <p>EMAIL US</p>
@@ -83,10 +66,14 @@ function Contact() {
           </div>
           <h4>FOLLOW US</h4>
           <div className="social_links">
-            <AiFillInstagram size={32} />
-            <AiFillLinkedin size={32} />
-            <AiFillFacebook size={32} />
-            <BsPinterest size={32} />
+
+  <i class="ri-instagram-fill" style={{fontSize: "32px"}}></i>
+
+  <i class="ri-linkedin-fill"  style={{fontSize: "32px"}}></i>
+
+  <i class="ri-facebook-fill" style={{fontSize: "32px"}}></i>
+
+  <i class="ri-pinterest-fill"  style={{fontSize: "32px"}}></i>
           </div>
         </div>
 

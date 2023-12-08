@@ -66,22 +66,25 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-// Get User Data by Email
-app.get('/userdata/:email', (req, res) => {
-    const userEmail = req.params.email;
-  
-    // Find the user by email
-    FS.readFile('Users.json', 'utf-8', (error, data) => {
-        const d = JSON.parse(data);
-        res.json(d);
-      });
-  
+app.get('/userdata/email/:email', async (req, res) => {
+  const userEmail = req.params.email;
+
+  try {
+    const users = await loadUserData();
+    const user = users.find(user => user.email === userEmail);
+
     if (user) {
       res.status(200).json({ user });
     } else {
       res.status(404).json({ error: 'User not found.' });
     }
-  });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
+
 
 // Product Fetching
 app.get('/:limit', async (req, res) => {

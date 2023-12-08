@@ -1,21 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faTimes,
-  faBagShopping,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
 import "../../App.css";
 import "./Commonnav.css";
 
 function Commonnav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (!user) {
+      setIsLogin(false);
+    }
+
+    if (user) {
+      setIsLogin(true);
+    }
+  }, []);
 
   return (
     <div className="Cnavbar">
@@ -26,10 +31,10 @@ function Commonnav() {
         <div className="Cmobile_link">
           <div className="Cmenu-toggle" onClick={toggleMenu}>
             {isMenuOpen ? (
-              <FontAwesomeIcon icon={faTimes} size="2x" />
-            ) : (
-              <FontAwesomeIcon icon={faBars} size="2x" />
-            )}
+              <i class="fa-solid fa-xmark fa-2xl"></i>
+              ) : (
+                <i class="fa-solid fa-xmark fa-2xl"></i>
+                )}
           </div>
         </div>
 
@@ -47,14 +52,22 @@ function Commonnav() {
             Contact
           </Link>
           <Link className="Clink" to="/cart">
-            <FontAwesomeIcon
-              icon={faBagShopping}
-              style={{ fontSize: "1.5rem" }}
-            />
+          <i class="fa-solid fa-bag-shopping" style={{ fontSize: "1.5rem" }}></i>
+
           </Link>
-          <Link className="Clink" to="/login">
-            <FontAwesomeIcon icon={faUser} style={{ fontSize: "1.5rem" }} />
-          </Link>
+          {
+            isLogin ? (
+              <Link className="Clink" to="/user">
+                <i class="fa-solid fa-user" style={{ fontSize: "1.5rem" }}></i>{" "}
+
+              </Link>
+            ) : (
+              <Link className="Clink" to="/login">
+                <i class="fa-solid fa-arrow-right-to-bracket" style={{ fontSize: "1.5rem" }}></i>{" "}
+              </Link>
+            )
+          }
+
         </div>
       </nav>
     </div>

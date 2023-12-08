@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-import { faStar, faShoppingBag } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ShopContext } from "../../context/shop-context";
 import "../../App.css";
 import "./Product.css";
@@ -29,24 +27,21 @@ const Product = React.memo((props) => {
           </div>
           <div className="cart_icon">
             <button className="addToCartBttn" onClick={MySwal}>
-              <FontAwesomeIcon
-                onClick={() => {
+                <i  onClick={() => {
                   addToCart(id);
-                }}
-                icon={faShoppingBag}
-                style={{ fontSize: "1.2rem" }}
-              />
+                }} class="fas fa-shopping-bag" style={{ fontSize: "1.2rem" }}></i>
             </button>
           </div>
         </div>
 
         <div className="rating">
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+
+
         </div>
         <p className="pname">{title}</p>
         <p className="puse">{description}</p>

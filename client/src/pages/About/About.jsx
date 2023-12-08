@@ -3,8 +3,6 @@ import Footer from "../../components/Footer/Footer";
 import "../../App.css";
 import "./About.css";
 import c1 from "../../assets/bg-2.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 
 import a1 from "../../assets/a1.jpg";
 import a2 from "../../assets/a2.jpg";
@@ -68,7 +66,7 @@ function About() {
               venenatis nunc hendrerit.
             </p>
 
-            <FontAwesomeIcon className="icon" icon={faQuoteLeft} />
+            <i class="fas fa-quote-left"></i>
             <p className="pp">
               Massa aliquam montes, odio porttitor sit ac maecenas interdum ut
               tincidunt nisl erat quam eu natoque in nisl, lobortis sapien in

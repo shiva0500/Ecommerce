@@ -2,15 +2,7 @@ import React from "react";
 import banner from "../../assets/bg-1.jpg";
 import "../../App.css";
 import c1 from "../../assets/bg-2.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Testimonial.css";
-
-import {
-  faQuoteLeft,
-  faLock,
-  faBox,
-  faHandHoldingHeart,
-} from "@fortawesome/free-solid-svg-icons";
 
 const Testimonial = () => {
   return (
@@ -38,7 +30,7 @@ const Testimonial = () => {
         <h2>What Our Customers Say</h2>
         <div className="wrapper">
           <div className="card">
-            <FontAwesomeIcon className="icon" icon={faQuoteLeft} />
+            <i class="fa-solid fa-quote-left fa-2xl"></i>{" "}
             <p>
               Sed odio donec curabitur auctor amet tincidunt non odio enim felis
               tincidunt amet morbi egestas hendrerit.
@@ -47,7 +39,7 @@ const Testimonial = () => {
             <p>JENNIFER LEWIS</p>
           </div>
           <div className="card">
-            <FontAwesomeIcon className="icon" icon={faQuoteLeft} />{" "}
+            <i class="fa-solid fa-quote-left fa-2xl" ></i>{" "}
             <p>
               Sed odio donec curabitur auctor amet tincidunt non odio enim felis
               tincidunt amet morbi egestas hendrerit.
@@ -56,7 +48,7 @@ const Testimonial = () => {
             <p>JENNIFER LEWIS</p>
           </div>
           <div className="card">
-            <FontAwesomeIcon className="icon" icon={faQuoteLeft} />{" "}
+            <i class="fa-solid fa-quote-left fa-2xl"></i>{" "}
             <p>
               Sed odio donec curabitur auctor amet tincidunt non odio enim felis
               tincidunt amet morbi egestas hendrerit.
@@ -79,45 +71,42 @@ const Testimonial = () => {
 
       <div className="services">
         <div className="service_card">
-          <FontAwesomeIcon
-            className="sicon"
-            icon={faLock}
+          <i
+            class="fa-solid fa-lock"
             style={{
-              color: "#fafafa",
-              fontSize: "1.35rem",
-              padding: "1.35rem",
-            }}
-          />
+              color: "#13b37b",
+              fontSize: "3.35rem",
+              padding: "0.35rem",
+            }}></i>
+
           <div className="s-content">
             <h4>SECURE PAYMENT</h4>
             <p>Curabitur interdum, nisl at tincidunt.</p>
           </div>
         </div>
         <div className="service_card">
-          <FontAwesomeIcon
-            className="sicon"
-            icon={faBox}
+          <i
+            class="fa-solid fa-box"
             style={{
-              color: "#fafafa",
-              fontSize: "1.35rem",
-              padding: "1.35rem",
-            }}
-          />
+              color: "#13b37b",
+              fontSize: "3.35rem",
+              padding: "0.35rem",
+            }}></i>
+
           <div className="s-content">
             <h4>DELIVERED WITH CARE</h4>
             <p>Curabitur interdum, nisl at tincidunt.</p>
           </div>
         </div>
         <div className="service_card">
-          <FontAwesomeIcon
-            className="sicon"
-            icon={faHandHoldingHeart}
+          <i
+            class="fa-solid fa-hand-holding-heart"
             style={{
-              color: "#fafafa",
-              fontSize: "1.35rem",
-              padding: "1.35rem",
-            }}
-          />
+              color: "#13b37b",
+              fontSize: "3.35rem",
+              padding: "0.35rem",
+            }}></i>
+
           <div className="s-content">
             <h4>EXCELLENT SERVICE</h4>
             <p>Curabitur interdum, nisl at tincidunt.</p>

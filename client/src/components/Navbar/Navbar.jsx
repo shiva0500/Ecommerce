@@ -1,29 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faBagShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 import "../../App.css";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useState(false);
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (!user) {
+      setIsLogin(false);
+    }
+
+    if (user) {
+      setIsLogin(true);
+    }
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-
-  // const handleUserLink = () => {
-  //   // Redirect based on authentication status
-  //   // if () {
-  //   //   // Redirect to the user page if logged in
-  //   //   window.location.href = "/user"; // Use window.location.href for external navigation
-  //   // } else {
-  //   //   // Redirect to the login page if not logged in
-  //   //   window.location.href = "/login"; // Use window.location.href for external navigation
-  //   // }
-  // };
 
   return (
     <div className="navbar">
@@ -34,9 +31,9 @@ const Navbar = () => {
         <div className="mobile_link">
           <div className="menu-toggle" onClick={toggleMenu}>
             {isMenuOpen ? (
-              <FontAwesomeIcon icon={faTimes} size="2x" />
+              <i class="fa-solid fa-xmark fa-2xl"></i>
             ) : (
-              <FontAwesomeIcon icon={faBars} size="2x" />
+              <i class="fa-solid fa-bars fa-2xl"></i>
             )}
           </div>
         </div>
@@ -54,13 +51,23 @@ const Navbar = () => {
             Contact
           </Link>
           <Link className="link" to="/cart">
-            <FontAwesomeIcon icon={faBagShopping} style={{ fontSize: "1.5rem" }} />           
+            <i
+              class="fa-solid fa-bag-shopping"
+              style={{ fontSize: "1.5rem" }}></i>
           </Link>
-          <div className="link" >
-        
-        <Link to="/user" ><FontAwesomeIcon icon={faUser} style={{ fontSize: "1.5rem" }} /></Link>
-        
-      </div>
+          <div className="link">
+            {isLogin ? (
+              <Link className="link" to="/user">
+                <i class="fa-solid fa-user" style={{ fontSize: "1.5rem" }}></i>{" "}
+              </Link>
+            ) : (
+              <Link className="link" to="/login">
+                <i
+                  class="fa-solid fa-arrow-right-to-bracket"
+                  style={{ fontSize: "1.5rem" }}></i>{" "}
+              </Link>
+            )}
+          </div>
         </div>
       </nav>
     </div>

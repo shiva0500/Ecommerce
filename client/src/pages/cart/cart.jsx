@@ -32,10 +32,9 @@ const Cart = () => {
         ...JSON.parse(storedCartItems),
       ]);
     }
-  }, [addToCart]); // Ensure that addToCart is stable and doesn't change on every render
+  }, [addToCart]); 
 
   useEffect(() => {
-    // Save cart items to localStorage whenever the cartItems state changes
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 

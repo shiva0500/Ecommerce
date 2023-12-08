@@ -1,40 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
-import { Link ,useNavigate } from "react-router-dom";
-// import Swal from "sweetalert2";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import axios from 'axios';
 
 
 
 
 const Login = () => {
-  
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const user = localStorage.getItem('user');
+    if (user) {
+      navigate('/');
+    }
+  }, []);
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
       const response = await axios.post('http://localhost:5000/api/login', { email, password });
       console.log('Login successful', response.data.user);
-      localStorage.setItem('user' , email );
+      localStorage.setItem('user', email);
       navigate('/'); // Navigate to home on successful login
     } catch (error) {
       console.error('Error logging in:', error.response.data.message);
       setError('Invalid credentials. Please try again.'); // Set error message
     }
   };
-  // const alert = () => {
-  //     Swal.fire({
-  //       icon: "error",
-  //       title: "please ckeck details",
-  //       showConfirmButton: false,
-  //       timer: 1500
-  //     });
-  //   }
+  const alert = () => {
+      Swal.fire({
+        icon: "success",
+        title: "Login Successfully",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
 
   return (
     <>
@@ -43,8 +49,8 @@ const Login = () => {
         </div>
         <div className="login_page">
           <form onSubmit={handleLogin} method="post" action="">
-          <h1>PLANTOSHO </h1>
-           
+            <h1>PLANTOSHO </h1>
+
             <h2>Login your account</h2>
             <p>welcome back!</p>
             <label >Email :</label>
@@ -53,11 +59,11 @@ const Login = () => {
             <label htmlFor="">Password :</label>
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
             <br />
-            <input type="submit" value="Login"/>
+            <input type="submit" onClick={alert} value="Login" />
             <br />
             <div className="create">
-            <p>Don't have an account?</p> <Link className="loginLink" to="/Signup" >Sign up</Link>
-            {error && <p>{error}</p>}
+              <p>Don't have an account?</p> <Link className="loginLink" to="/Signup" >Sign up</Link>
+              {error && <p>{error}</p>}
             </div>
           </form>
         </div>
